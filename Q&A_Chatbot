@@ -1,0 +1,50 @@
+class User:
+    def __init__(self):
+        self.name = None
+        self.age = None
+        self.address = None
+
+    def get_name(self):
+        while True:
+            self.name = input("What is your name? ")
+            confirmation = input(f"Is it correct, {self.name}? Please type (yes/no): ").lower()
+            if confirmation == 'yes':
+                break
+
+    def get_age(self):
+        while True:
+            self.age = input("How old are you? ")
+            confirmation = input(f"Is it correct, {self.age} years old? Please type (yes/no): ").lower()
+            if confirmation == 'yes':
+                break
+
+    def get_address(self):
+        while True:
+            self.address = input("Where do you live? ")
+            confirmation = input(f"Is it correct, living at {self.address}? Please type (yes/no): ").lower()
+            if confirmation == 'yes':
+                break
+
+    def display_info(self):
+        print(f"\nUser Information:")
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Address: {self.address}")
+
+class ChatBot:
+    def __init__(self):
+        self.user = User()
+
+    def start_chat(self):
+        print("Welcome to the ChatBot!")
+        self.user.get_name()
+        self.user.get_age()
+        self.user.get_address()
+        self.user.display_info()
+        print("\nThank you for chatting with the ChatBot!")
+
+# Create an instance of the ChatBot class
+chatbot = ChatBot()
+
+# Start the chat
+chatbot.start_chat()
